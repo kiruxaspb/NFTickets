@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+#root {
+    
+    justify-content:baseline;
+    margin-top: 200px;
+}
+
+.App {
+    width: 800px;
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    margin-top: 15px;
+    justify-content: space-evenly;
+    
+}
+
+.bttn {
+    float: right;
+    margin-top: 30px;
+}
+
+html {
+    background-image: url(CHECK.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
