@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="inputarea">
+            <p>адрес</p>
+            <input type="text" class="inputaddr" id="adr">
+            <p>policy id</p>
+            <input type="text" class="inputpolicyid" id="policyid">
+            <button id="check" onclick="checkTicket()">check</button>
+        </div>
+        <div className="showStatus" id="showResult">
+            <div>
+                <span>Статус адреса: </span> <span id="addressStatus"></span>
+            </div>
+            <div>
+              <span>Статус билета: </span> <span id="tokenStatus"></span>
+            </div>
+          </div>
+    </div>
+    <script type="application" src="./main.js">
+    </script>
+</body>
+</html>
