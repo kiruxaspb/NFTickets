@@ -1,0 +1,28 @@
+policyid: {
+    asset: '2746630c3fc744720afec1daa0dc4e797ffc11d0ce82a4d7904767f34d794e4654',
+    policy_id: '2746630c3fc744720afec1daa0dc4e797ffc11d0ce82a4d7904767f3',
+    asset_name: '4d794e4654',
+    fingerprint: 'asset17vwvt3s7qc3tju8vcfpedxwpujwws5n8hlz6r0',
+    quantity: '1',
+    initial_mint_tx_hash: '2e529a4870ade106dc71ecfdd80362fb56cde8d0da1dd8568c9a3a232581ff00',
+    mint_or_burn_count: 1,
+    onchain_metadata: {
+        name: 'NnfT',
+        image: 'ipfs://QmUb8fW7qm1zCLhiKLcFH9yTCZ3hpsuKdkTgKmC8iFhxV8',
+        description: 'Test NFT'
+    },
+    metadata: null
+}
+wallet: {
+    address: 'addr_test1qzuxrr3kjv3qlmkveqmqpnle305zdmzkdsugqnw09652pts0r7c7dgry3k3tck962853ez9qkx59yfthd3qmk4v6r54qz90e67',
+    amount: [
+        { unit: 'lovelace', quantity: '990554287' },
+        {
+        unit: '2746630c3fc744720afec1daa0dc4e797ffc11d0ce82a4d7904767f34d794e4654',
+        quantity: '1'
+        }
+    ],
+    stake_address: 'stake_test1uq83lv0x5pjgmg4utza9r6gu3zstr2zjy4mkcsdm2kdp62smff2gu',
+    type: 'shelley',
+    script: false
+}
