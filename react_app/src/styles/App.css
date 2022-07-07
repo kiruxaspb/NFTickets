@@ -12,20 +12,34 @@
 
 .App {
     width: 800px;
+    margin-left: 50px;
 }
 
 .post {
-    display: flex;
-    padding: 15px;
-    margin-top: 15px;
-    justify-content: space-evenly;
+    width: 100%;
+    position: relative;
+    top: -80px;
+    padding: 12px 20px;
+    margin: 0px 180px;
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: rgba(09, 11, 33, 0.658);
     
 }
 
+
 .bttn {
-    float: right;
-    margin-top: 30px;
+    
+    margin-top: -250px;
+    margin-left: 680px;
+    height: 60px;
+    width: 300px;
+    cursor: pointer;
+    background-color: rgb(17, 27, 71);
+    color: white;
+    font-size: 25px;
 }
+
 
 html {
     background-image: url(CHECK.png);
@@ -37,3 +51,39 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
+
+.input {
+    padding-left: 15px;
+    width: 1200px;
+    height: 50px;
+    border: 4px ;
+    background-color: rgb(217, 217, 217);
+    border-radius: 20px;
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: rgb(09, 11, 33);
+    
+}
+
+.Title {
+    text-align: center;
+    margin-left: 50%;
+    
+    top: -10px;
+    font-size: 50px;
+    font-family: "Times New Roman";
+    color: rgb(09, 11, 33);
+}
+
+.showStatus {
+    margin-left: 560px;
+    width: 500px;
+    margin-top: 70px;
+    font-size: 30px;
+    font-family: "Times New Roman";
+    color: rgb(09, 11, 33);
+    background-color: rgb(217, 217, 217);
+    height: 80px;
+    padding: 30px;
+    border-radius: 20px;
+}

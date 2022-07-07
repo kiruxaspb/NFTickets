@@ -1,13 +1,11 @@
 import React, {useState} from "react";
 
 const Address = function () {
-    const [value, setValue] = useState('Input text');
+    const [value, setValue] = useState('');
 
    return (
     <div>
-        <h1>{value}</h1>
-
-        <input 
+        <input className="input" 
         type="text" 
         value={value}
         onChange={event => setValue(event.target.value)}/>
