@@ -1,0 +1,16 @@
+valid addr & token
+
+Correct address: true
+Token on the wallet: true
+
+
+invalid address:
+
+error Invalid address for this network or malformed address format.
+invalid address: false
+
+
+invalid token:
+
+Correct address: true
+Token isn't on the wallet: false
