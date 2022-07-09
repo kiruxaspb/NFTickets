@@ -6,6 +6,11 @@ Token on the wallet: true
 
 invalid address:
 
+NEW:
+invalid address: false
+Search token skipped
+
+V1:
 error Invalid address for this network or malformed address format.
 invalid address: false
 
