@@ -1,4 +1,26 @@
-valid address
-adr: addr_test1qzuxrr3kjv3qlmkveqmqpnle305zdmzkdsugqnw09652pts0r7c7dgry3k3tck962853ez9qkx59yfthd3qmk4v6r54qz90e67
-valid token
+""
+@@ VALID ADDR & TOKEN:
+
+valid address: true
+address: addr_test1qzuxrr3kjv3qlmkveqmqpnle305zdmzkdsugqnw09652pts0r7c7dgry3k3tck962853ez9qkx59yfthd3qmk4v6r54qz90e67
+valid token: true
 token: 2746630c3fc744720afec1daa0dc4e797ffc11d0ce82a4d7904767f34d794e4654
+""
+
+""
+@@ INVALID ADDR & VALID TOKEN:
+
+invalid address false
+
+// дополнительно можно вывести невалидный адрес для каких-то дальнейших действий
+""
+
+""
+@@ VALID ADDRESS & INVALID TOKEN:
+
+valid address: true
+address: addr_test1qzuxrr3kjv3qlmkveqmqpnle305zdmzkdsugqnw09652pts0r7c7dgry3k3tck962853ez9qkx59yfthd3qmk4v6r54qz90e67
+invalid token false
+
+// дополнительно можно вывести невалидный токен для каких-то дальнейших действий
+""
