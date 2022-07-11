@@ -12,9 +12,10 @@ const API = new Blockfrost.BlockFrostAPI({
 
 const target_err = "Invalid address for this network or malformed address format.";
 
-let checked = new Object;
+
 
 module.exports.checkTicket = async function(WALLET_ADDR, POLICY_ID) {
+    let checked = new Object;
     //const WALLET_ADDR = "addr_test1qzuxrr3kjv3qlmkveqmqpnle305zdmzkdsugqnw09652pts0r7c7dgry3k3tck962853ez9qkx59yfthd3qmk4v6r54qz90e67";
 
 //const POLICY_ID = "2746630c3fc744720afec1daa0dc4e797ffc11d0ce82a4d7904767f34d794e4654" // policy ID + asset name
@@ -39,7 +40,7 @@ module.exports.checkTicket = async function(WALLET_ADDR, POLICY_ID) {
                 console.log("Token on the wallet:", checked.tokenChecked);
             } else {
                 checked.tokenChecked = false;
-                console.log("Token isn't on the wallet:", checked.tokenChecked);
+                console.log("Token isn't on the wallet:", checked.tokenChecked);                
             }
         }
     
