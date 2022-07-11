@@ -10,7 +10,7 @@ const urlencodedParser = bodyParser.urlencoded({
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'src')))
 app.get('/', (req, res) => {
-    res.render(`${__dirname}/src/index.hbs`);
+    res.sendFile(`${__dirname}/src/index.html`);
 });
 app.get('/register', urlencodedParser, function (
     request,
@@ -18,18 +18,15 @@ app.get('/register', urlencodedParser, function (
   ) {
     response.sendFile(__dirname + '/src/register.html')
   })
-  app.post('/', urlencodedParser, async function (
+  app.get('/api', async function (
     request,
     response
   ) {
-    if (!request.body) return response.sendStatus(400)
-    console.log(request.body)
-    let checked = await checker.checkTicket(request.body.addr,request.body.polid);
-    console.log(checked);
-    response.render(`${__dirname}/src/index.hbs`, {
-        adressStatus: checked.addressChecked,
-        ticketStatus: checked.tokenChecked,
-      })
+    if (!request.query) return response.sendStatus(400)
+    console.log(request.query);
+    let checked = await checker.checkTicket(request.query.addr, request.query.polid);
+    console.log("checker said: ",checked);
+    response.send(checked);
   })
 
 app.listen(3000, () => {
