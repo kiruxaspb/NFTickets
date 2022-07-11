@@ -1,7 +1,4 @@
-function startApp(){
-    //$('#show-gen-qr').hide();
-    //$('#show-scan-qr').hide();
-}
+function startApp(){}
 
 window.addEventListener('load', async function () {
     startApp();

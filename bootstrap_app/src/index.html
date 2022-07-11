@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <title>NFT tickets</title>
+    <title>NFTickets</title>
 
     <link rel="stylesheet" type="text/css" href="css/App.css">
 
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">NFT tickets</a>
+                <a class="navbar-brand" href="#">NFTickets</a>
             </div>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,7 +70,7 @@
                                 </form>
                             </li>
                         </ul>
-                      </li>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -92,62 +92,62 @@
                     <input type="submit" class="btn btn-primary btn-lg bttn-1" value="Проверить билеты" />
                 </form>
                 <div class="container st" style="background-color:rgb(217, 217, 217)">
-                    <p id="adressStatus">Статус адреса: </p>
-                    <p id="ticketStatus">Статус билета: </p>
+                    <p id="adressStatus">Проверка адреса: </p>
+                    <p id="ticketStatus">Проверка токена: </p>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2"> 
                 <button type="button" class="btn btn-primary btn-lg bttn" onclick="generateQR()">
                     Сгенерировать QR
                 </button>
-                
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <div class="qr" >
                     <div class="qr_2" style="background-color:rgb(217, 217, 217)">
                         <div id="show-gen-qr">
-                            <canvas id="qrcode"></canvas>
+                            <canvas class="qr-image" id="qrcode"></canvas>
                         </div>
                         <div id="show-scan-qr">
                             <video id="show-scan-qr2"></video>
                         </div>    
-                  </div>
-                   <button type="button" class="btn btn-primary btn-lg bttn-2" id="qr-scan-button">Сканировать QR</button>
-                   <div class="st-1" style="background-color:rgb(217, 217, 217)">
-                      <p>Статус билета: </p>
-                   </div>
-                </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg bttn-2">Загрузить QR</button>
+                    <button type="button" class="btn btn-primary btn-lg bttn-2">Сканировать QR</button>
+                    <div class="st-1" style="background-color:rgb(217, 217, 217)">
+                        <p>Статус билета: </p>
+                    </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+
     <script>
         function checkTicket(adr, polid) {
             let myurl = new URL("http://localhost:3000/api");
             myurl.searchParams.append('addr', adr);
             myurl.searchParams.append('polid', polid);
-  $.ajax({
-    url: myurl,
-    type: 'GET',
-    contentType: 'application/json',
-    success: function (data) {
-      console.log("got data: ",data);
-      $('p#adressStatus').text("Статус адреса: " + data.addressChecked.toString());
-      $('p#ticketStatus').text("Статус билета: "+ data.tokenChecked.toString());
-    },
-  })
-}
-$('form').submit(function (e) {
-        e.preventDefault()
-        const adr = this.elements['addr'].value
-        const polid = this.elements['polid'].value
-        if ((adr == "")||(polid == "")) {alert("Заполните поля!"); return}
-        checkTicket(adr, polid);
-      })
+            $.ajax({
+                url: myurl,
+                type: 'GET',
+                contentType: 'application/json',
+                success: function (data) {
+                console.log("got data: ",data);
+                $('p#adressStatus').text("Проверка адреса: " + data.addressChecked.toString());
+                $('p#ticketStatus').text("Проверка токена: "+ data.tokenChecked.toString());
+                },
+            })
+        }
+
+        $('form').submit(function (e) {
+            e.preventDefault()
+            const adr = this.elements['addr'].value
+            const polid = this.elements['polid'].value
+            if ((adr == "")||(polid == "")) { alert("Заполните поля!"); return }
+            checkTicket(adr, polid);
+        })
     </script>
 </body>
 </html>
