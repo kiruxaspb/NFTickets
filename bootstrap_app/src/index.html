@@ -81,25 +81,28 @@
         <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 main">
+                <!-- Форма заполнения входных данных -->
                 <h1 class="Data">Введите данные</h1>   
                 <form class="input-area-1">
                     <div class="form-group">
                         <label>Адрес:</label>
-                        <input class="form-control me-2" name="addr" id="addr" type="text" placeholder="Введите данные">
+                        <input class="form-control me-2" name="addr" id="address" type="text" placeholder="Введите данные">
                         <label class="input-area-1">Policy id:</label>
-                        <input class="form-control me-2" name="polid" id="polid" type="text" placeholder="Введите данные">
+                        <input class="form-control me-2" name="polid" id="policyid" type="text" placeholder="Введите данные">
                     </div>
                     <input type="submit" class="btn btn-primary btn-lg bttn-1" value="Проверить билеты" />
-                    <button type="button" class="btn btn-primary btn-lg bttn-1" onclick="generateQR()">
+                    <button type="button" class="btn btn-primary btn-lg bttn-1 generateQRButton" onclick="generateQR()">
                         Сгенерировать QR
                     </button>
                 </form>
+                <!-- Вывод результатов проверки -->
                 <div class="container st" style="background-color:rgb(217, 217, 217)">
                     <p id="adressStatus">Проверка адреса: </p>
                     <p id="ticketStatus">Проверка токена: </p>
                 </div>
             </div>
-
+            
+            <!-- Поле вывода сгенерированного QR-кода и сканера QR кодов -->    
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <div class="qr" >
                     <div class="qr_2" style="background-color:rgb(217, 217, 217)">
@@ -117,12 +120,13 @@
         </div>
 
     </div>
-
+    
     <script>
-        function checkTicket(adr, polid) {
+        // Вызов модуля проверки токена
+        function checkTicket(address, policyid) {
             let myurl = new URL("http://localhost:3000/api");
-            myurl.searchParams.append('addr', adr);
-            myurl.searchParams.append('polid', polid);
+            myurl.searchParams.append('address', address);
+            myurl.searchParams.append('policyid', policyid);
             $.ajax({
                 url: myurl,
                 type: 'GET',
@@ -134,13 +138,13 @@
                 },
             })
         }
-
+        // Проверка заполнения полей
         $('form').submit(function (e) {
             e.preventDefault()
-            const adr = this.elements['addr'].value
-            const polid = this.elements['polid'].value
-            if ((adr == "")||(polid == "")) { alert("Заполните поля!"); return }
-            checkTicket(adr, polid);
+            const address = this.elements['address'].value
+            const policyid = this.elements['policyid'].value
+            if ((address == "")||(policyid == "")) { alert("Заполните поля!"); return }
+            checkTicket(address, policyid);
         })
     </script>
 </body>

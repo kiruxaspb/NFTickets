@@ -1,16 +1,18 @@
-function generateQR(){
+function generateQR() {
     $('#show-gen-qr').show();
     $('#show-scan-qr').hide();
     $('#qrcode').empty();
-    const addr = $('#addr').val();
-    const polid = $('#polid').val();
-    console.log(typeof addr);
-    console.log(typeof polid);
-    if ((addr == "")||(polid == "")) {alert("Заполните поля!"); return}
+    const address = $('#address').val();
+    const policyid = $('#policyid').val();
+    console.log(typeof address);
+    console.log(typeof policyid);
+
+    if ((address == "")||(policyid == "")) {alert("Заполните поля!"); return}
     const qrtext = JSON.stringify({
-        adress: addr,
-        policyid: polid
+        address: address,
+        policyid: policyid
     });
+    
     new QRious({element: document.getElementById("qrcode"), size: 256, level: 'L', value: qrtext});
     console.log(qrtext);
     $('#show-gen-qr').show();

@@ -1,7 +1,9 @@
-function startApp(){
+function startApp() {
     $('#show-gen-qr').hide();
     $('#show-scan-qr').hide();
-    }
-    window.addEventListener('load', async function () {
-        startApp();
-    })
+}
+
+// Запуск функции при загрузке страницы
+window.addEventListener('load', async function () {
+    startApp();
+})
