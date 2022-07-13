@@ -1,6 +1,6 @@
 function generateQR(){
-    $('#show-scan-qr').hide();
     $('#show-gen-qr').show();
+    $('#show-scan-qr').hide();
     $('#qrcode').empty();
     const addr = $('#addr').val();
     const polid = $('#polid').val();

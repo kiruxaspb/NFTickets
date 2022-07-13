@@ -18,17 +18,19 @@ app.get('/register', urlencodedParser, function (
   ) {
     response.sendFile(__dirname + '/src/register.html')
   })
-  app.get('/api', async function (
+
+app.get('/api', async function (
     request,
     response
   ) {
     if (!request.query) return response.sendStatus(400)
     console.log(request.query);
     let checked = await checker.checkTicket(request.query.addr, request.query.polid);
-    console.log("checker said: ",checked);
+    console.log("checker said:", checked);
     response.send(checked);
   })
 
 app.listen(3000, () => {
     console.log('Application listening on port 3000!');
+    console.log('Link: http://localhost:3000/')
 });
