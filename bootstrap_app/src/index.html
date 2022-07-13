@@ -24,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="./js/qrcode.min.js"></script>
     <script src="./js/qr-gen.js"></script>
-    <script src="./js/qr-scan.js" type="module"></script>
+    <script src="./js/qr-scan.js"></script>
     <script src="./js/main.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -106,13 +106,12 @@
                         <div id="show-gen-qr">
                             <canvas class="qr-image" id="qrcode"></canvas>
                         </div>
-                        <div id="show-scan-qr">
-                            <video id="show-scan-qr2"></video>
+                        <div class="qr-scan" id="show-scan-qr">
+                            <div id="qr-reader" style="width: 600px"></div>
                         </div>    
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-lg bttn-2">Сканировать QR</button>
-                    <div class="st-1" style="background-color:rgb(217, 217, 217)"><p>Статус билета: </p></div>
+                    <button type="button" class="btn btn-primary btn-lg bttn-2" onclick="ScanQR()">Сканировать QR</button>
                 </div>
             </div>
         </div>
