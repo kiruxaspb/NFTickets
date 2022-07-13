@@ -18,7 +18,8 @@ app.get('/register', urlencodedParser, function (
   ) {
     response.sendFile(__dirname + '/src/register.html')
   })
-  app.get('/api', async function (
+
+app.get('/api', async function (
     request,
     response
   ) {

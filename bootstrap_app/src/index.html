@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,16 +80,19 @@
 
         <div class="row">
 
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 main">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 main">
                 <h1 class="Data">Введите данные</h1>   
                 <form class="input-area-1">
                     <div class="form-group">
                         <label>Адрес:</label>
                         <input class="form-control me-2" name="addr" id="addr" type="text" placeholder="Введите данные">
-                        <label>Policy id:</label>
+                        <label class="input-area-1">Policy id:</label>
                         <input class="form-control me-2" name="polid" id="polid" type="text" placeholder="Введите данные">
                     </div>
                     <input type="submit" class="btn btn-primary btn-lg bttn-1" value="Проверить билеты" />
+                    <button type="button" class="btn btn-primary btn-lg bttn-1" onclick="generateQR()">
+                        Сгенерировать QR
+                    </button>
                 </form>
                 <div class="container st" style="background-color:rgb(217, 217, 217)">
                     <p id="adressStatus">Проверка адреса: </p>
@@ -97,13 +100,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2"> 
-                <button type="button" class="btn btn-primary btn-lg bttn" onclick="generateQR()">
-                    Сгенерировать QR
-                </button>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <div class="qr" >
                     <div class="qr_2" style="background-color:rgb(217, 217, 217)">
                         <div id="show-gen-qr">
@@ -113,11 +110,9 @@
                             <video id="show-scan-qr2"></video>
                         </div>    
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg bttn-2">Загрузить QR</button>
+
                     <button type="button" class="btn btn-primary btn-lg bttn-2">Сканировать QR</button>
-                    <div class="st-1" style="background-color:rgb(217, 217, 217)">
-                        <p>Статус билета: </p>
-                    </div>
+                    <div class="st-1" style="background-color:rgb(217, 217, 217)"><p>Статус билета: </p></div>
                 </div>
             </div>
         </div>
