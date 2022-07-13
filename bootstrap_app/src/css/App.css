@@ -65,6 +65,9 @@ label {
   height: 475px;
   width: 475px;
 }
+.qr-scan {
+  margin-left: 10%;
+}
 
 p {
   color: rgb(9, 11, 33);
