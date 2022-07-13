@@ -55,6 +55,10 @@ label {
   border-radius: 0px;
 }
 
+.scan-qr {
+  margin-left: 10%;
+}
+
 p {
   color: rgb(9, 11, 33);
 }
