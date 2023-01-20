@@ -5,26 +5,26 @@ const API = new Blockfrost.BlockFrostAPI({
 });
 
 const target_err = "Invalid address for this network or malformed address format.";
-// WALLET_ADDR & POLICY_ID получаем с сайта
+// WALLET_ADDR & POLICY_ID get it from the site
 module.exports.checkTicket = async function(WALLET_ADDR, POLICY_ID) {
     let checked = new Object;
     try {
         const address = await API.addresses(WALLET_ADDR);
         const adr = address.address;
 
-        // Сравнение входного адреса с адресом в Cardano
+        // Comparison of the input address with the Cardano address
         if (adr === WALLET_ADDR) {
             checked.addressChecked = true;
             console.log("Correct address:", checked.addressChecked);
 
-            // Поиск токена в активах адреса
+            // Search for a token in the address assets
             for (let i = 0; i < address.amount.length; i++) {
                 if (address.amount[i].unit === POLICY_ID) {
                     checked.tokenChecked = true;
                 }
             }
 
-            // Получение результата проверки
+            // Getting the verification result
             if (checked.tokenChecked == true) {
                 console.log("Token on the wallet:", checked.tokenChecked);
             } else {
