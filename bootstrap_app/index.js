@@ -16,7 +16,7 @@ app.get('/register', urlencodedParser, (req, res) => {
     res.sendFile(__dirname + '/src/register.html')
 })
 
-// Ответ модуля проверки токена
+// The response of the token verification module
 app.get('/api', async function (req, res) {
     if (!req.query) return res.sendStatus(400)
     console.log(req.query);

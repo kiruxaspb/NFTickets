@@ -3,7 +3,7 @@ function startApp() {
     $('#show-scan-qr').hide();
 }
 
-// Запуск функции при загрузке страницы
+// Launching the function when the page loads
 window.addEventListener('load', async function () {
     startApp();
 })

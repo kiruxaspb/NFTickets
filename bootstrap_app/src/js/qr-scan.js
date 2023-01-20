@@ -9,7 +9,7 @@ function ScanQR() {
         $("#address").val(obj.address);
         $("#policyid").val(obj.policyid);
         checkTicket(obj.address, obj.policyid);
-        // После сканирования сразу проводится проверка входных данных
+        // After scanning, the input data is checked immediately
     }
 
     const html5QrcodeScanner = new Html5QrcodeScanner(
